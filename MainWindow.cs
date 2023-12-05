@@ -11,7 +11,6 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Runtime.CompilerServices;
 using System.IO;
 using System.Reflection;
@@ -110,6 +109,12 @@ namespace B2B_Application_Wizard
                 return;
             }
 
+            if(accounts.Count == 0)
+            {
+                MessageBox.Show("Accounts list is empty. Please click \"Add\" before submitting.");
+                return;
+            }
+
             try
             {
                 DialogResult dr = MessageBox.Show("Are you sure you want to submit?", "Submit?", MessageBoxButtons.YesNo);
@@ -136,15 +141,15 @@ namespace B2B_Application_Wizard
 
             catch (Exception ex)
             {
-                MessageBox.Show("Submission failed with the following message: " + ex.Message + Environment.NewLine + "Contact Josh with this info to debug.");
+                MessageBox.Show("Submission failed with the following message: " + ex.Message +  Environment.NewLine + ex.StackTrace + Environment.NewLine + "Contact Josh with this info to debug.");
                 return;
             }
         }
 
         private void SaveSubmission()
         {
-            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv"), @"C:\3apps\temp\Account Submission " + DateTime.Now.ToString("MM-dd-yyyy.csv"));
-            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv"), @"C:\3apps\temp\Contact Submission " + DateTime.Now.ToString("MM-dd-yyyy.csv"));
+            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv"), @"C:\3apps\temp\Account Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
+            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv"), @"C:\3apps\temp\Contact Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
             DialogResult dr = MessageBox.Show("Files copied to Eagle Temp folder. Would you like to open the folder?", "Success!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
@@ -154,8 +159,7 @@ namespace B2B_Application_Wizard
 
         private void ClearFields()
         {
-            accounts.Clear();
-            contacts.Clear();
+            Application.Restart();
 
         }
 
@@ -452,19 +456,6 @@ namespace B2B_Application_Wizard
             EmailPassword emailPassword = new EmailPassword();
             emailPassword.ShowDialog();
         }
-        private void deleteLogEntryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!DeleteLogEntry.CanOpen())
-            {
-                MessageBox.Show("Log file doesn't exist. Please submit a list of accounts first to create initial log files.", "Log File Error");
-                return;
-            }
-            else
-            {
-                DeleteLogEntry dleWindow = new DeleteLogEntry();
-                dleWindow.ShowDialog();
-            }
-        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -480,6 +471,11 @@ namespace B2B_Application_Wizard
             ViewLog vlWindow = new ViewLog();
             vlWindow.ShowDialog();     
 
+        }
+
+        private void lnkAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dgvContacts.DataSource = contacts;
         }
     }
 
@@ -660,8 +656,6 @@ namespace B2B_Application_Wizard
             get { return _primaryContact; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Primary contact can't be empty");
                 if (value.Length > 20)
                     throw new ArgumentException("Primary contact must be 20 characters or less.");
                 if (value.Contains(","))

@@ -33,8 +33,9 @@
             this.tbxAccountNumberSearch = new System.Windows.Forms.TextBox();
             this.lblAccountNumber = new System.Windows.Forms.Label();
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.lblCompanyName = new System.Windows.Forms.Label();
             this.tbxCompanySearch = new System.Windows.Forms.TextBox();
+            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
             this.grpSearch.SuspendLayout();
             this.SuspendLayout();
@@ -97,15 +98,6 @@
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Boxes";
             // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(160, 41);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(154, 25);
-            this.lblCompanyName.TabIndex = 4;
-            this.lblCompanyName.Text = "Company Name";
-            // 
             // tbxCompanySearch
             // 
             this.tbxCompanySearch.Location = new System.Drawing.Point(165, 70);
@@ -115,11 +107,31 @@
             this.tbxCompanySearch.TabIndex = 5;
             this.tbxCompanySearch.TextChanged += new System.EventHandler(this.tbxCompanySearch_TextChanged);
             // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(160, 41);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(154, 25);
+            this.lblCompanyName.TabIndex = 4;
+            this.lblCompanyName.Text = "Company Name";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(690, 13);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(193, 124);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete Selected Entry";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // ViewLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 828);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvLog);
@@ -141,5 +153,6 @@
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.TextBox tbxCompanySearch;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

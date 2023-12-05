@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbxCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
@@ -66,7 +66,6 @@
             this.lblContactEmail = new System.Windows.Forms.Label();
             this.tbxContactName = new System.Windows.Forms.TextBox();
             this.tbxContactEmail = new System.Windows.Forms.TextBox();
-            this.lblDGVAccount = new System.Windows.Forms.Label();
             this.lblDGVContacts = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxContactPhone = new System.Windows.Forms.MaskedTextBox();
@@ -79,8 +78,8 @@
             this.openProgramDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteLogEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lnkAccounts = new System.Windows.Forms.LinkLabel();
             this.accountNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -387,14 +386,14 @@
             this.dgvAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAccounts.AutoGenerateColumns = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accountNumberDataGridViewTextBoxColumn,
@@ -425,20 +424,20 @@
             // 
             // dgvContacts
             // 
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContacts.AutoGenerateColumns = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accountNumDataGridViewTextBoxColumn,
@@ -494,16 +493,6 @@
             this.tbxContactEmail.Size = new System.Drawing.Size(304, 29);
             this.tbxContactEmail.TabIndex = 18;
             // 
-            // lblDGVAccount
-            // 
-            this.lblDGVAccount.AutoSize = true;
-            this.lblDGVAccount.Location = new System.Drawing.Point(802, 44);
-            this.lblDGVAccount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblDGVAccount.Name = "lblDGVAccount";
-            this.lblDGVAccount.Size = new System.Drawing.Size(585, 25);
-            this.lblDGVAccount.TabIndex = 52;
-            this.lblDGVAccount.Text = "Accounts (Click on an account to update the Contacts view below)";
-            // 
             // lblDGVContacts
             // 
             this.lblDGVContacts.AutoSize = true;
@@ -535,7 +524,7 @@
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Location = new System.Drawing.Point(291, 814);
+            this.btnAddAccount.Location = new System.Drawing.Point(289, 825);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(142, 40);
             this.btnAddAccount.TabIndex = 20;
@@ -554,7 +543,7 @@
             this.grpContacts.Controls.Add(this.lblContactEmail);
             this.grpContacts.Location = new System.Drawing.Point(15, 626);
             this.grpContacts.Name = "grpContacts";
-            this.grpContacts.Size = new System.Drawing.Size(731, 162);
+            this.grpContacts.Size = new System.Drawing.Size(731, 182);
             this.grpContacts.TabIndex = 16;
             this.grpContacts.TabStop = false;
             this.grpContacts.Text = "Contacts";
@@ -616,24 +605,29 @@
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewLogToolStripMenuItem,
-            this.deleteLogEntryToolStripMenuItem});
+            this.viewLogToolStripMenuItem});
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
             this.logToolStripMenuItem.Size = new System.Drawing.Size(65, 34);
             this.logToolStripMenuItem.Text = "Log";
             // 
-            // deleteLogEntryToolStripMenuItem
-            // 
-            this.deleteLogEntryToolStripMenuItem.Name = "deleteLogEntryToolStripMenuItem";
-            this.deleteLogEntryToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
-            this.deleteLogEntryToolStripMenuItem.Text = "Delete Log Entry";
-            // 
             // viewLogToolStripMenuItem
             // 
             this.viewLogToolStripMenuItem.Name = "viewLogToolStripMenuItem";
-            this.viewLogToolStripMenuItem.Size = new System.Drawing.Size(284, 40);
+            this.viewLogToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.viewLogToolStripMenuItem.Text = "View Log";
             this.viewLogToolStripMenuItem.Click += new System.EventHandler(this.viewLogToolStripMenuItem_Click);
+            // 
+            // lnkAccounts
+            // 
+            this.lnkAccounts.AutoSize = true;
+            this.lnkAccounts.Location = new System.Drawing.Point(807, 49);
+            this.lnkAccounts.Name = "lnkAccounts";
+            this.lnkAccounts.Size = new System.Drawing.Size(842, 25);
+            this.lnkAccounts.TabIndex = 55;
+            this.lnkAccounts.TabStop = true;
+            this.lnkAccounts.Text = "Accounts (Click on an account to update the Contacts view below. Click this label" +
+    " to clear filters.)";
+            this.lnkAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAccounts_LinkClicked);
             // 
             // accountNumDataGridViewTextBoxColumn
             // 
@@ -791,13 +785,13 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1820, 916);
+            this.Controls.Add(this.lnkAccounts);
             this.Controls.Add(this.grpContacts);
             this.Controls.Add(this.btnAddAccount);
             this.Controls.Add(this.lblDGVContacts);
-            this.Controls.Add(this.lblDGVAccount);
             this.Controls.Add(this.dgvContacts);
             this.Controls.Add(this.dgvAccounts);
             this.Controls.Add(this.tbxAddressZip);
@@ -883,7 +877,6 @@
         private System.Windows.Forms.Label lblContactEmail;
         private System.Windows.Forms.TextBox tbxContactName;
         private System.Windows.Forms.TextBox tbxContactEmail;
-        private System.Windows.Forms.Label lblDGVAccount;
         private System.Windows.Forms.Label lblDGVContacts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox tbxContactPhone;
@@ -916,8 +909,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openProgramDirectoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteLogEntryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewLogToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel lnkAccounts;
     }
 }
 

@@ -18,6 +18,7 @@ using System.Reflection;
 using B2B_Application_Wizard_v2;
 using System.Diagnostics;
 using B2B_Application_Wizard;
+using System.Security.Principal;
 
 namespace B2B_Application_Wizard_v2
 {
@@ -34,12 +35,12 @@ namespace B2B_Application_Wizard_v2
 
         private void SetBindingList()
         {
-            BindingList<LogEntry> log = BuildList();
+            BindingList<LogEntry> log = LoadLog();
             dgvLog.DataSource = log;
 
         }
 
-        private BindingList<LogEntry> BuildList()
+        private BindingList<LogEntry> LoadLog()
         {
 
             using (StreamReader sr = new StreamReader(logPath))
@@ -101,5 +102,32 @@ namespace B2B_Application_Wizard_v2
             var filterList = logList.Where(x => x.CompanyName.Contains(filter)).ToList();
             dgvLog.DataSource = filterList;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvLog.CurrentRow != null)
+            {
+                // Remove the selected row from the DataGridView
+                dgvLog.Rows.RemoveAt(dgvLog.CurrentRow.Index);
+
+                // Save the updated DataTable back to CSV
+                SaveLog(logPath);
+            }
+        }
+
+        public void SaveLog(string filePath)
+        {
+            using (StreamWriter sw = new StreamWriter(filePath))
+            {
+                foreach (LogEntry entry in logList)
+                {
+                    sw.WriteLine($"{entry.AccountNumber},{entry.CompanyName},{DateTime.Now}");
+                }
+            }
+        }
+        
+        
+        
+    
     }
 }

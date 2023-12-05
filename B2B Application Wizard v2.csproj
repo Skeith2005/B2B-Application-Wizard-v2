@@ -30,7 +30,7 @@
     <PublisherName>Gorsonic Utilities</PublisherName>
     <SuiteName>Gorsonic Utilities</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>2.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -89,12 +89,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeleteLogEntry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteLogEntry.Designer.cs">
-      <DependentUpon>DeleteLogEntry.cs</DependentUpon>
-    </Compile>
     <Compile Include="EmailPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +109,6 @@
     <Compile Include="ViewLog.Designer.cs">
       <DependentUpon>ViewLog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DeleteLogEntry.resx">
-      <DependentUpon>DeleteLogEntry.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EmailPassword.resx">
       <DependentUpon>EmailPassword.cs</DependentUpon>
     </EmbeddedResource>

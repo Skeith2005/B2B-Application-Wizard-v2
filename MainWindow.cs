@@ -211,21 +211,23 @@ namespace B2B_Application_Wizard
                 foreach (Account account in accounts)
                 {
 
-                    sw.Write(String.Format("{0},", account.AccountNumber));
-                    sw.Write(String.Format("{0},", account.CompanyName));
-                    sw.Write(String.Format("{0},", account.PhoneNumber));
-                    sw.Write(String.Format("{0},", account.FaxNumber));
-                    sw.Write(String.Format("{0},", account.AddressOne));
-                    sw.Write(String.Format("{0},", account.AddressTwo));
-                    sw.Write(String.Format("{0},", account.City));
-                    sw.Write(String.Format("{0},", account.State));
-                    sw.Write(String.Format("{0},", account.ZipCode));
-                    sw.Write(String.Format("{0},", account.PrimaryContact));
-                    sw.Write(String.Format("{0},", account.SegmentCode));
-                    sw.Write(String.Format("{0},", account.TaxExempt));
-                    sw.Write(String.Format("{0},", account.Notes));
-                    sw.Write(String.Format("{0}", account.SortName));
-                    sw.WriteLine();
+                    //sw.Write(String.Format("{0},", account.AccountNumber));
+                    //sw.Write(String.Format("{0},", account.CompanyName));
+                    //sw.Write(String.Format("{0},", account.PhoneNumber));
+                    //sw.Write(String.Format("{0},", account.FaxNumber));
+                    //sw.Write(String.Format("{0},", account.AddressOne));
+                    //sw.Write(String.Format("{0},", account.AddressTwo));
+                    //sw.Write(String.Format("{0},", account.City));
+                    //sw.Write(String.Format("{0},", account.State));
+                    //sw.Write(String.Format("{0},", account.ZipCode));
+                    //sw.Write(String.Format("{0},", account.PrimaryContact));
+                    //sw.Write(String.Format("{0},", account.SegmentCode));
+                    //sw.Write(String.Format("{0},", account.TaxExempt));
+                    //sw.Write(String.Format("{0},", account.Notes));
+                    //sw.Write(String.Format("{0}", account.SortName));
+                    //sw.WriteLine();
+
+                    sw.WriteLine($"{account.AccountNumber},{account.CompanyName},{account.PhoneNumber},{account.FaxNumber},{account.AddressOne},{account.AddressTwo},{account.City},{account.State},{account.ZipCode},{account.PrimaryContact},{account.SegmentCode},{account.TaxExempt},{account.Notes},{account.SortName}");
 
                 }
             }
@@ -701,7 +703,16 @@ namespace B2B_Application_Wizard
         public string SortName
         {
             get { return _sortName; }
-            set { _sortName = _companyName.Substring(0,10); }
+            set {
+                if (_companyName.Length > 10)
+                {
+                    _sortName = _companyName.Substring(0, 10);
+                }
+                else
+                {
+                    _sortName = _companyName;
+                }
+            }
         }
     }
 

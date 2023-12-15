@@ -61,7 +61,27 @@
             this.tbxAddressState = new System.Windows.Forms.TextBox();
             this.tbxAddressZip = new System.Windows.Forms.TextBox();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.accountNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.storeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faxNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primaryContactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.segmentCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxExemptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvContacts = new System.Windows.Forms.DataGridView();
+            this.accountNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblContactName = new System.Windows.Forms.Label();
             this.lblContactEmail = new System.Windows.Forms.Label();
             this.tbxContactName = new System.Windows.Forms.TextBox();
@@ -80,32 +100,12 @@
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lnkAccounts = new System.Windows.Forms.LinkLabel();
-            this.accountNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.storeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.faxNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primaryContactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.segmentCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxExemptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContacts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.grpContacts.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -422,6 +422,124 @@
             this.dgvAccounts.TabStop = false;
             this.dgvAccounts.SelectionChanged += new System.EventHandler(this.dgvAccounts_SelectionChanged);
             // 
+            // accountNumberDataGridViewTextBoxColumn
+            // 
+            this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "AccountNumber";
+            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Account Number";
+            this.accountNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
+            this.accountNumberDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // storeNameDataGridViewTextBoxColumn
+            // 
+            this.storeNameDataGridViewTextBoxColumn.DataPropertyName = "StoreName";
+            this.storeNameDataGridViewTextBoxColumn.HeaderText = "StoreName";
+            this.storeNameDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.storeNameDataGridViewTextBoxColumn.Name = "storeNameDataGridViewTextBoxColumn";
+            this.storeNameDataGridViewTextBoxColumn.Visible = false;
+            this.storeNameDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "Account Name";
+            this.companyNameDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            this.companyNameDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
+            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // faxNumberDataGridViewTextBoxColumn
+            // 
+            this.faxNumberDataGridViewTextBoxColumn.DataPropertyName = "FaxNumber";
+            this.faxNumberDataGridViewTextBoxColumn.HeaderText = "Fax Number";
+            this.faxNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.faxNumberDataGridViewTextBoxColumn.Name = "faxNumberDataGridViewTextBoxColumn";
+            this.faxNumberDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // addressOneDataGridViewTextBoxColumn
+            // 
+            this.addressOneDataGridViewTextBoxColumn.DataPropertyName = "AddressOne";
+            this.addressOneDataGridViewTextBoxColumn.HeaderText = "Address 1";
+            this.addressOneDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.addressOneDataGridViewTextBoxColumn.Name = "addressOneDataGridViewTextBoxColumn";
+            this.addressOneDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // addressTwoDataGridViewTextBoxColumn
+            // 
+            this.addressTwoDataGridViewTextBoxColumn.DataPropertyName = "AddressTwo";
+            this.addressTwoDataGridViewTextBoxColumn.HeaderText = "Address 2";
+            this.addressTwoDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.addressTwoDataGridViewTextBoxColumn.Name = "addressTwoDataGridViewTextBoxColumn";
+            this.addressTwoDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // zipCodeDataGridViewTextBoxColumn
+            // 
+            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "Zip Code";
+            this.zipCodeDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
+            this.zipCodeDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // primaryContactDataGridViewTextBoxColumn
+            // 
+            this.primaryContactDataGridViewTextBoxColumn.DataPropertyName = "PrimaryContact";
+            this.primaryContactDataGridViewTextBoxColumn.HeaderText = "Primary Contact";
+            this.primaryContactDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.primaryContactDataGridViewTextBoxColumn.Name = "primaryContactDataGridViewTextBoxColumn";
+            this.primaryContactDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // segmentCodeDataGridViewTextBoxColumn
+            // 
+            this.segmentCodeDataGridViewTextBoxColumn.DataPropertyName = "SegmentCode";
+            this.segmentCodeDataGridViewTextBoxColumn.HeaderText = "Business Focus";
+            this.segmentCodeDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.segmentCodeDataGridViewTextBoxColumn.Name = "segmentCodeDataGridViewTextBoxColumn";
+            this.segmentCodeDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
+            this.notesDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.Visible = false;
+            this.notesDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // taxExemptDataGridViewTextBoxColumn
+            // 
+            this.taxExemptDataGridViewTextBoxColumn.DataPropertyName = "TaxExempt";
+            this.taxExemptDataGridViewTextBoxColumn.HeaderText = "TaxExempt";
+            this.taxExemptDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.taxExemptDataGridViewTextBoxColumn.Name = "taxExemptDataGridViewTextBoxColumn";
+            this.taxExemptDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(B2B_Application_Wizard.Account);
+            // 
             // dgvContacts
             // 
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -454,6 +572,42 @@
             this.dgvContacts.Size = new System.Drawing.Size(1003, 253);
             this.dgvContacts.TabIndex = 39;
             this.dgvContacts.TabStop = false;
+            // 
+            // accountNumDataGridViewTextBoxColumn
+            // 
+            this.accountNumDataGridViewTextBoxColumn.DataPropertyName = "AccountNum";
+            this.accountNumDataGridViewTextBoxColumn.HeaderText = "Account Number";
+            this.accountNumDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.accountNumDataGridViewTextBoxColumn.Name = "accountNumDataGridViewTextBoxColumn";
+            this.accountNumDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // contactNameDataGridViewTextBoxColumn
+            // 
+            this.contactNameDataGridViewTextBoxColumn.DataPropertyName = "ContactName";
+            this.contactNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.contactNameDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.contactNameDataGridViewTextBoxColumn.Name = "contactNameDataGridViewTextBoxColumn";
+            this.contactNameDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // contactNumberDataGridViewTextBoxColumn
+            // 
+            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
+            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
+            this.contactNumberDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // contactEmailDataGridViewTextBoxColumn
+            // 
+            this.contactEmailDataGridViewTextBoxColumn.DataPropertyName = "ContactEmail";
+            this.contactEmailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.contactEmailDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.contactEmailDataGridViewTextBoxColumn.Name = "contactEmailDataGridViewTextBoxColumn";
+            this.contactEmailDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(B2B_Application_Wizard.Contact);
             // 
             // lblContactName
             // 
@@ -613,7 +767,7 @@
             // viewLogToolStripMenuItem
             // 
             this.viewLogToolStripMenuItem.Name = "viewLogToolStripMenuItem";
-            this.viewLogToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.viewLogToolStripMenuItem.Size = new System.Drawing.Size(215, 40);
             this.viewLogToolStripMenuItem.Text = "View Log";
             this.viewLogToolStripMenuItem.Click += new System.EventHandler(this.viewLogToolStripMenuItem_Click);
             // 
@@ -628,160 +782,6 @@
             this.lnkAccounts.Text = "Accounts (Click on an account to update the Contacts view below. Click this label" +
     " to clear filters.)";
             this.lnkAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAccounts_LinkClicked);
-            // 
-            // accountNumDataGridViewTextBoxColumn
-            // 
-            this.accountNumDataGridViewTextBoxColumn.DataPropertyName = "AccountNum";
-            this.accountNumDataGridViewTextBoxColumn.HeaderText = "Account Number";
-            this.accountNumDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.accountNumDataGridViewTextBoxColumn.Name = "accountNumDataGridViewTextBoxColumn";
-            this.accountNumDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // contactNameDataGridViewTextBoxColumn
-            // 
-            this.contactNameDataGridViewTextBoxColumn.DataPropertyName = "ContactName";
-            this.contactNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.contactNameDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.contactNameDataGridViewTextBoxColumn.Name = "contactNameDataGridViewTextBoxColumn";
-            this.contactNameDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
-            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            this.contactNumberDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // contactEmailDataGridViewTextBoxColumn
-            // 
-            this.contactEmailDataGridViewTextBoxColumn.DataPropertyName = "ContactEmail";
-            this.contactEmailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.contactEmailDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.contactEmailDataGridViewTextBoxColumn.Name = "contactEmailDataGridViewTextBoxColumn";
-            this.contactEmailDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(B2B_Application_Wizard.Contact);
-            // 
-            // accountNumberDataGridViewTextBoxColumn
-            // 
-            this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "AccountNumber";
-            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Account Number";
-            this.accountNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
-            this.accountNumberDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // storeNameDataGridViewTextBoxColumn
-            // 
-            this.storeNameDataGridViewTextBoxColumn.DataPropertyName = "StoreName";
-            this.storeNameDataGridViewTextBoxColumn.HeaderText = "StoreName";
-            this.storeNameDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.storeNameDataGridViewTextBoxColumn.Name = "storeNameDataGridViewTextBoxColumn";
-            this.storeNameDataGridViewTextBoxColumn.Visible = false;
-            this.storeNameDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // companyNameDataGridViewTextBoxColumn
-            // 
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "Account Name";
-            this.companyNameDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
-            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // faxNumberDataGridViewTextBoxColumn
-            // 
-            this.faxNumberDataGridViewTextBoxColumn.DataPropertyName = "FaxNumber";
-            this.faxNumberDataGridViewTextBoxColumn.HeaderText = "Fax Number";
-            this.faxNumberDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.faxNumberDataGridViewTextBoxColumn.Name = "faxNumberDataGridViewTextBoxColumn";
-            this.faxNumberDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // addressOneDataGridViewTextBoxColumn
-            // 
-            this.addressOneDataGridViewTextBoxColumn.DataPropertyName = "AddressOne";
-            this.addressOneDataGridViewTextBoxColumn.HeaderText = "Address 1";
-            this.addressOneDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.addressOneDataGridViewTextBoxColumn.Name = "addressOneDataGridViewTextBoxColumn";
-            this.addressOneDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // addressTwoDataGridViewTextBoxColumn
-            // 
-            this.addressTwoDataGridViewTextBoxColumn.DataPropertyName = "AddressTwo";
-            this.addressTwoDataGridViewTextBoxColumn.HeaderText = "Address 2";
-            this.addressTwoDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.addressTwoDataGridViewTextBoxColumn.Name = "addressTwoDataGridViewTextBoxColumn";
-            this.addressTwoDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // zipCodeDataGridViewTextBoxColumn
-            // 
-            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "Zip Code";
-            this.zipCodeDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // primaryContactDataGridViewTextBoxColumn
-            // 
-            this.primaryContactDataGridViewTextBoxColumn.DataPropertyName = "PrimaryContact";
-            this.primaryContactDataGridViewTextBoxColumn.HeaderText = "Primary Contact";
-            this.primaryContactDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.primaryContactDataGridViewTextBoxColumn.Name = "primaryContactDataGridViewTextBoxColumn";
-            this.primaryContactDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // segmentCodeDataGridViewTextBoxColumn
-            // 
-            this.segmentCodeDataGridViewTextBoxColumn.DataPropertyName = "SegmentCode";
-            this.segmentCodeDataGridViewTextBoxColumn.HeaderText = "Business Focus";
-            this.segmentCodeDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.segmentCodeDataGridViewTextBoxColumn.Name = "segmentCodeDataGridViewTextBoxColumn";
-            this.segmentCodeDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            this.notesDataGridViewTextBoxColumn.Visible = false;
-            this.notesDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // taxExemptDataGridViewTextBoxColumn
-            // 
-            this.taxExemptDataGridViewTextBoxColumn.DataPropertyName = "TaxExempt";
-            this.taxExemptDataGridViewTextBoxColumn.HeaderText = "TaxExempt";
-            this.taxExemptDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.taxExemptDataGridViewTextBoxColumn.Name = "taxExemptDataGridViewTextBoxColumn";
-            this.taxExemptDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(B2B_Application_Wizard.Account);
             // 
             // MainWindow
             // 
@@ -827,15 +827,15 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(1844, 980);
             this.Name = "MainWindow";
-            this.Text = "B2B Application Wizard v2.0.2 (Rev. 11-27-23)";
+            this.Text = "B2B Application Wizard v2.1.0 (Rev. 12/14/2023)";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.grpContacts.ResumeLayout(false);
             this.grpContacts.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

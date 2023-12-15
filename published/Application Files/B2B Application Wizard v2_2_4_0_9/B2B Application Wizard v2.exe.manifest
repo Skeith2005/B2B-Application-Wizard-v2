@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="B2B Application Wizard v2.exe" version="2.4.0.9" publicKeyToken="151167e9ceceaf5d" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="B2B Application Wizard v2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="B2B Application Wizard v2.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="B2B Application Wizard v2.exe" size="105976">
+      <assemblyIdentity name="B2B Application Wizard v2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>XZcjHbk+CQ/908xQcefrh1ttlX+2g715BGaYUeQ6N44=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="B2B Application Wizard v2.exe.config" size="163">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aGKyVzYln3v9NE5D7qEKcDiFvjge7ip0XOsSkWsBoVg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="favicon.ico" size="53414">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0Bcrj1Q04Mcyl4OAZ8YaHELEBlQpCUrJBS568WMCP98=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on and is
+           is designed to work with. Uncomment the appropriate elements and Windows will 
+           automatically selected the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=&quot;Gorsonic Security CA, 0=Gorsonic Solutions Inc, C=US&quot;" issuerKeyHash="3b45225ec950cc9c252078364fdfe30a6b70ef09" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>DYl6JN5zR+IflLUqYg0Lj4CGHaHb714HICTFm/xFN44=</DigestValue></Reference></SignedInfo><SignatureValue>X16CnCnFDz0ANuf1NDYc2Ce9aekPzp0Xc37I5buLjXyOuJG4G7bHlb+b2h/ZHxwh8b8oouN4oHHIpcD0GkNKnDjw9Hclv6E7irC+CyeLs9ZWSXoYoO71MB4/gYmigLGSycwsJOGqfxaWD8PH93vQy9VvFPQS1m4MfozEtUvwxb1FlUb96zou9t6eCGmZMuM8/aqnx7OO+WdB6Zk6XZVp8vmH6XoL9yObdPyHobbTfDwvWmopN4TQg1DIcRw9adiC8Ed/QUeXABS+P7BQNeUpgDG9BizJ/bls1eiSv3JkOslyGP8fWDbxhHoL/61MMw43/2qDhyZwEDakhubXMiXGqA==</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0VlcPjSa6XdzHrv1BKg9haZhIAi4bZXy3NpSUA8D28ce5G3eaodbOK1e3XoRulgQv+sqydq8dU4o7qGeuQ4dB4KhN+rjou9flyUjHzx7EFu9iwAHYAuH+vu+uNLhH3q6l1nOkGEKTCdYSiyQzurjWf1V7p3+WVi6yaDLhMi4ziv+QAjTOt3AeLazU4p1hUlgcTi0ldsHVfqjaF68KtPVcsZ3IAgCAA1AaXgFgVQbUhBmLzqfrsGB2U3H3WiQgiDHKYe6euwQRXxa0kvU8ycJKdj24HjQ0XpYIZq64iqy0slvYLBbHNyJC96lNbzmqjB1rw977ziCjIRJfmPzQZ9noQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8e3745fc9bc52420075eefdba11d86808f0b0d622ab5941fe24773de247a890d" Description="" Url=""><as:assemblyIdentity name="B2B Application Wizard v2.exe" version="2.4.0.9" publicKeyToken="151167e9ceceaf5d" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN="Gorsonic Security CA, 0=Gorsonic Solutions Inc, C=US"</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>qgWd5Rvdji0fOYdhX8vl+rDoo9EZlDxCOsUS7g0PSNU=</DigestValue></Reference></SignedInfo><SignatureValue>wIk8PpcAJGA0Tr578EcSK9afEa+xmu9LCwE0E5qyRYvTqB57yLfnuKbnB1XIzpOHLLr1kW82D5USOpc/uDLvog0hy6ekYGPqMrttXvB8TaY1j8Kq48gWyI1UcgDXVMxLuPyvwD5Mo1wx4pVM8nDTRP81LFcbBFQcUxe0OEpBEglfkJNu8s5Ka10+ixHivFEzbRYs/DxZqPKZomGkBLLn4Cny3QViC2YiWZsfQNBWnLx8tYqMeDKu1e8YHqfIgtQGBSCaZC3kGuogH9UqKl2ikHe0LaOvcM/82/1pR9YhntVkmkGzIiBjj5YfW0QDvQGO6l3mQpNYjU5Ro6k9REGziA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0VlcPjSa6XdzHrv1BKg9haZhIAi4bZXy3NpSUA8D28ce5G3eaodbOK1e3XoRulgQv+sqydq8dU4o7qGeuQ4dB4KhN+rjou9flyUjHzx7EFu9iwAHYAuH+vu+uNLhH3q6l1nOkGEKTCdYSiyQzurjWf1V7p3+WVi6yaDLhMi4ziv+QAjTOt3AeLazU4p1hUlgcTi0ldsHVfqjaF68KtPVcsZ3IAgCAA1AaXgFgVQbUhBmLzqfrsGB2U3H3WiQgiDHKYe6euwQRXxa0kvU8ycJKdj24HjQ0XpYIZq64iqy0slvYLBbHNyJC96lNbzmqjB1rw977ziCjIRJfmPzQZ9noQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIDXDCCAkSgAwIBAgIQbzjDD2NcS5pMjJhsXuvJ3TANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDDDRHb3Jzb25pYyBTZWN1cml0eSBDQSwgMD1Hb3Jzb25pYyBTb2x1dGlvbnMgSW5jLCBDPVVTMB4XDTIzMTIxNTE3NDI0NVoXDTI2MDkxNTE3NTI0NlowPzE9MDsGA1UEAww0R29yc29uaWMgU2VjdXJpdHkgQ0EsIDA9R29yc29uaWMgU29sdXRpb25zIEluYywgQz1VUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANFZXD40mul3cx679QSoPYWmYSAIuG2V8tzaUlAPA9vHHuRt3mqHWzitXt16EbpYEL/rKsnavHVOKO6hnrkOHQeCoTfq46LvX5clIx88exBbvYsAB2ALh/r7vrjS4R96updZzpBhCkwnWEoskM7q41n9Ve6d/llYusmgy4TIuM4r/kAI0zrdwHi2s1OKdYVJYHE4tJXbB1X6o2hevCrT1XLGdyAIAgANQGl4BYFUG1IQZi86n67BgdlNx91okIIgxymHunrsEEV8WtJL1PMnCSnY9uB40NF6WCGauuIqstLJb2CwWxzciQvepTW85qowda8Pe+84goyESX5j80GfZ6ECAwEAAaNUMFIwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFDtFIl7JUMycJSB4Nk/f4wprcO8JMA0GCSqGSIb3DQEBCwUAA4IBAQAuLHaMsN0p9+n2RaIIwp0MLZ+PdzB8jR0+XW0XlDtVL/pSZPZJ+8waj1DqabXRu4adRjg79liI1Mv87kXrckRii/33lT6X0MGH6fSKjEBUIrmCgkIU88wHcvsbY7f39h6Gj2VxQSz0IC7ZPUVXPbSSzZ6TtdKEL5MPswEtKond8iUJe/XC3nA4KL5hRD0tcbp4IxFq5UkwUuGByQN1xmWcsovn/YhJPUe+jWbuqvYTWVtBcKDoxuwCdPme/xTTZ6Y32rqKuJEcmQOT6ESPafXHrCxLvtRbeLpYhD8Qq0OgvYrRBQXJaUFbmIElwmajJLFwUZAWj53WnhcRFVNh7LTt</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

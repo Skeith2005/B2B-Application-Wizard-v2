@@ -16,6 +16,8 @@ using System.IO;
 using System.Reflection;
 using B2B_Application_Wizard_v2;
 using System.Diagnostics;
+using System.Deployment.Application;
+using System.Threading;
 
 namespace B2B_Application_Wizard
 {
@@ -24,12 +26,15 @@ namespace B2B_Application_Wizard
         BindingList<Account> accounts = new BindingList<Account>();
         BindingList<Contact> contacts = new BindingList<Contact>();
 
+        public readonly string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "B2B Application Wizard");
+
         public MainWindow()
         {
             InitializeComponent();
+            DisplayChangeLog();
             this.AcceptButton = null;
-            CheckForPassword();
             CheckForFiles();
+            CheckForPassword();
             cmbBusinessFocus.DataSource = setFocusList();
             cmbStore.DataSource = setStoreList();
             dgvAccounts.DataSource = accounts;
@@ -38,9 +43,24 @@ namespace B2B_Application_Wizard
             cmbBusinessFocus.ValueMember = "Code";
         }
 
+        private void DisplayChangeLog()
+        {
+            if(!ApplicationDeployment.IsNetworkDeployed)
+            {
+                return;
+            }
+
+            if(!ApplicationDeployment.CurrentDeployment.IsFirstRun)
+            {
+                return;
+            }
+            
+            MessageBox.Show("New to version " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ":" + Environment.NewLine + Environment.NewLine + "* Changed local cache location to ensure data continuity between updates. Log and Password cache may be lost after this update, but will not be impacted going forward.");
+        }
+
         private void CheckForPassword()
         {
-            if (!File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "password.txt")))
+            if (!File.Exists(Path.Combine(appDataPath, "password.txt")))
             {
                 MessageBox.Show("Password file not detected due to corruption or fresh install. Please enter your B2B Email password.", "Password Error");
                 EmailPassword emailPassword = new EmailPassword();
@@ -49,21 +69,24 @@ namespace B2B_Application_Wizard
         }
         private void CheckForFiles()
         {
-            //I need a function to check for contacts.csv or accounts.csv and delete them if they exist.
-
-            if (File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv")))
+            if(!Directory.Exists(appDataPath))
             {
-                File.Delete(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv"));
+                Directory.CreateDirectory(appDataPath);
             }
 
-            if (File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv")))
+            if (File.Exists(Path.Combine(appDataPath, "contacts.csv")))
             {
-                File.Delete(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv"));
+                File.Delete(Path.Combine(appDataPath, "contacts.csv"));
             }
 
-            if (!File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "log.csv")))
+            if (File.Exists(Path.Combine(appDataPath, "accounts.csv")))
             {
-                File.Create(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "log.csv")).Dispose();
+                File.Delete(Path.Combine(appDataPath, "accounts.csv"));
+            }
+
+            if (!File.Exists(Path.Combine(appDataPath, "log.csv")))
+            {
+                File.Create(Path.Combine(appDataPath, "log.csv")).Dispose();
             }
 
         }
@@ -148,8 +171,8 @@ namespace B2B_Application_Wizard
 
         private void SaveSubmission()
         {
-            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv"), @"C:\3apps\temp\Account Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
-            File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv"), @"C:\3apps\temp\Contact Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
+            File.Copy(Path.Combine(appDataPath, "accounts.csv"), @"C:\3apps\temp\Account Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
+            File.Copy(Path.Combine(appDataPath, "contacts.csv"), @"C:\3apps\temp\Contact Submission " + DateTime.Now.ToString("MM-dd-yyyy") + ".csv");
             DialogResult dr = MessageBox.Show("Files copied to Eagle Temp folder. Would you like to open the folder?", "Success!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
@@ -172,8 +195,8 @@ namespace B2B_Application_Wizard
             mail.To.Add(new MailAddress("shard26@pandphardware.com", "B2B Admin"));
             mail.Subject = "New B2B Accounts " + DateTime.Now.ToString("MM-dd-yyyy");
             mail.Body = "Attached are the new B2B accounts and contacts for " + cmbStore.Text + " for " + DateTime.Now;
-            mail.Attachments.Add(new Attachment(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv")));
-            mail.Attachments.Add(new Attachment(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv")));
+            mail.Attachments.Add(new Attachment(Path.Combine(appDataPath, "accounts.csv")));
+            mail.Attachments.Add(new Attachment(Path.Combine(appDataPath, "contacts.csv")));
             smtpClient.Send(mail);
 
             DialogResult dr = MessageBox.Show("Email sent successfully.");
@@ -181,7 +204,7 @@ namespace B2B_Application_Wizard
         }
         private void WriteLogEntry()
         {
-            using (StreamWriter sw = new StreamWriter(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "log.csv"), true))
+            using (StreamWriter sw = new StreamWriter(Path.Combine(appDataPath, "log.csv"), true))
             {
                 foreach (Account account in accounts)
                 {
@@ -194,7 +217,7 @@ namespace B2B_Application_Wizard
         private void WriteContactsFile()
         {
             //Rewrite function to use String.Format for each line, then call sw.WriteLine().
-            using (StreamWriter sw = new StreamWriter(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "contacts.csv")))
+            using (StreamWriter sw = new StreamWriter(Path.Combine(appDataPath, "contacts.csv")))
             {
                 foreach (Contact contact in contacts)
                 {
@@ -206,7 +229,7 @@ namespace B2B_Application_Wizard
         private void WriteAccountsFile()
         {
 
-            using (StreamWriter sw = new StreamWriter(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "accounts.csv")))
+            using (StreamWriter sw = new StreamWriter(Path.Combine(appDataPath, "accounts.csv")))
             {
                 foreach (Account account in accounts)
                 {
@@ -249,7 +272,7 @@ namespace B2B_Application_Wizard
             SmtpClient smtpClient = new SmtpClient();
             string password = null;
 
-            using (StreamReader sr = new StreamReader(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "password.txt")))
+            using (StreamReader sr = new StreamReader(Path.Combine(appDataPath, "password.txt")))
             {
                 password = sr.ReadToEnd();
             }
@@ -341,7 +364,7 @@ namespace B2B_Application_Wizard
 
         private bool SearchLog(string accountNumber, out LogEntry result)
         {
-            using (StreamReader sr = new StreamReader(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "log.csv")))
+            using (StreamReader sr = new StreamReader(Path.Combine(appDataPath, "log.csv")))
             {
                 string line;
                 result = new LogEntry();
@@ -465,7 +488,7 @@ namespace B2B_Application_Wizard
 
         private void openProgramDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            Process.Start("explorer.exe", appDataPath);
         }
 
         private void viewLogToolStripMenuItem_Click(object sender, EventArgs e)

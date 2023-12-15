@@ -24,7 +24,7 @@ namespace B2B_Application_Wizard_v2
 {
     public partial class ViewLog : Form
     {
-        private readonly string logPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "log.csv");
+        private readonly string logPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "B2B Application Wizard"), "log.csv");
         //private static readonly BindingList<LogEntry> logEntries = new BindingList<LogEntry>();
         BindingList<LogEntry> logList = new BindingList<LogEntry>();
         public ViewLog()

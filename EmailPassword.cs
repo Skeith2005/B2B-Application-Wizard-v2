@@ -15,7 +15,9 @@ namespace B2B_Application_Wizard_v2
 {
     public partial class EmailPassword : Form
     {
-        private readonly string txtFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "password.txt");
+        public readonly string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "B2B Application Wizard");
+
+        private readonly string txtFile = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "B2B Application Wizard"), "password.txt");
         public EmailPassword()
         {
             InitializeComponent();

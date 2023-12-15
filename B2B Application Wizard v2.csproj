@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/master/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/master/published/</UpdateUrl>
     <ProductName>B2B Application Wizard</ProductName>
     <PublisherName>Gorsonic Utilities</PublisherName>
     <SuiteName>Gorsonic Utilities</SuiteName>

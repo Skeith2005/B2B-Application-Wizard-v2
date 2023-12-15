@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>D:\Media\\Programming\B2B Application Wizard\published\</PublishUrl>
+    <PublishUrl>D:\Media\Programming\B2B Application Wizard\published\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,14 +25,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/master/published/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/master/published/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</UpdateUrl>
     <ProductName>B2B Application Wizard</ProductName>
     <PublisherName>Gorsonic Utilities</PublisherName>
     <SuiteName>Gorsonic Utilities</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>2.4.0.%2a</ApplicationVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>2.4.0.6</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,16 +60,16 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>EA8D33584B99F82A37EDDC8300E929FE9237CBE6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>85EA4AC88CED267588DF4403F849C7496DA7E8FA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>B2B Application Wizard_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>selfsign cert.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -79,6 +79,13 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -133,7 +140,7 @@
       <DependentUpon>ViewLog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="B2B Application Wizard_TemporaryKey.pfx" />
+    <None Include="B2B Application Wizard v2_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\B2B_Application_Wizard.Account.datasource" />
     <None Include="Properties\DataSources\B2B_Application_Wizard.Contact.datasource" />

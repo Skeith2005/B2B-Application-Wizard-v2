@@ -14,10 +14,10 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\10.107.54.188\Library\B2B\Program Files\New\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\Media\Work\Programming\C# Projects\B2B Application Wizard v2\B2B Application Wizard\published\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,7 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\10.107.54.188\Library\B2B\Program Files\New\</InstallUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</UpdateUrl>
     <ProductName>B2B Application Wizard</ProductName>
     <PublisherName>Gorsonic Utilities</PublisherName>
     <SuiteName>Gorsonic Utilities</SuiteName>
@@ -75,6 +76,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -169,6 +173,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

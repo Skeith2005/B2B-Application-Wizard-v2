@@ -23,15 +23,16 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/Skeith2005/B2B-Application-Wizard-v2/Release/published/</UpdateUrl>
     <ProductName>B2B Application Wizard</ProductName>
     <PublisherName>Gorsonic Utilities</PublisherName>
     <SuiteName>Gorsonic Utilities</SuiteName>
+    <MinimumRequiredVersion>2.4.0.10</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>2.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

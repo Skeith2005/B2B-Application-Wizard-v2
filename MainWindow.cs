@@ -55,7 +55,7 @@ namespace B2B_Application_Wizard
                 return;
             }
             
-            MessageBox.Show("New to version " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ":" + Environment.NewLine + Environment.NewLine + "* Changed local cache location to ensure data continuity between updates. Log and Password cache may be lost after this update, but will not be impacted going forward.");
+            MessageBox.Show("New to version " + VersionLabel + ":" + Environment.NewLine + Environment.NewLine + "* Changed local cache location to ensure data continuity between updates. Log and Password cache may be lost after this update, but will not be impacted going forward." + Environment.NewLine + "* Uploaded to GitHub for future updates and hosting.");
         }
 
         private void CheckForPassword()
@@ -505,7 +505,7 @@ namespace B2B_Application_Wizard
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(VersionLabel + Environment.NewLine + "Created by Josh Shanabarger" + Environment.NewLine + "For use by Woodcrest Ace Hardware, Inc.");
+            MessageBox.Show("B2B Application Wizard, Version: " + VersionLabel + Environment.NewLine + "Created by Josh Shanabarger" + Environment.NewLine + "For use by Woodcrest Ace Hardware, Inc.");
         }
 
         private string VersionLabel
@@ -515,15 +515,16 @@ namespace B2B_Application_Wizard
                 if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
                 {
                     Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
-                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                    return string.Format("{0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision);
                 }
                 else
                 {
                     var ver = Assembly.GetExecutingAssembly().GetName().Version;
-                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                    return string.Format("{0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision);
                 }
             }
         }
+            
     }
 
     public class Account

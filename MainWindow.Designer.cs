@@ -32,9 +32,9 @@ namespace B2B_Application_Wizard
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbxCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
@@ -102,8 +102,8 @@ namespace B2B_Application_Wizard
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lnkAccounts = new System.Windows.Forms.LinkLabel();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lnkAccounts = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContacts)).BeginInit();
@@ -132,6 +132,7 @@ namespace B2B_Application_Wizard
             this.tbxCompanyName.Name = "tbxCompanyName";
             this.tbxCompanyName.Size = new System.Drawing.Size(448, 29);
             this.tbxCompanyName.TabIndex = 3;
+            this.tbxCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // lblCompanyName
             // 
@@ -181,6 +182,7 @@ namespace B2B_Application_Wizard
             this.tbxAddress1.Name = "tbxAddress1";
             this.tbxAddress1.Size = new System.Drawing.Size(768, 29);
             this.tbxAddress1.TabIndex = 6;
+            this.tbxAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // lblPrimaryContact
             // 
@@ -200,6 +202,7 @@ namespace B2B_Application_Wizard
             this.tbxPurchContact.Name = "tbxPurchContact";
             this.tbxPurchContact.Size = new System.Drawing.Size(384, 29);
             this.tbxPurchContact.TabIndex = 11;
+            this.tbxPurchContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // cmbBusinessFocus
             // 
@@ -327,6 +330,7 @@ namespace B2B_Application_Wizard
             this.tbxAddress2.Name = "tbxAddress2";
             this.tbxAddress2.Size = new System.Drawing.Size(768, 29);
             this.tbxAddress2.TabIndex = 7;
+            this.tbxAddress2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // lblCity
             // 
@@ -366,6 +370,7 @@ namespace B2B_Application_Wizard
             this.tbxAddressCity.Name = "tbxAddressCity";
             this.tbxAddressCity.Size = new System.Drawing.Size(184, 29);
             this.tbxAddressCity.TabIndex = 8;
+            this.tbxAddressCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // tbxAddressState
             // 
@@ -384,20 +389,21 @@ namespace B2B_Application_Wizard
             this.tbxAddressZip.Name = "tbxAddressZip";
             this.tbxAddressZip.Size = new System.Drawing.Size(108, 29);
             this.tbxAddressZip.TabIndex = 10;
+            this.tbxAddressZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // dgvAccounts
             // 
             this.dgvAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAccounts.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accountNumberDataGridViewTextBoxColumn,
@@ -546,20 +552,20 @@ namespace B2B_Application_Wizard
             // 
             // dgvContacts
             // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContacts.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accountNumDataGridViewTextBoxColumn,
@@ -641,6 +647,7 @@ namespace B2B_Application_Wizard
             this.tbxContactName.Name = "tbxContactName";
             this.tbxContactName.Size = new System.Drawing.Size(184, 29);
             this.tbxContactName.TabIndex = 16;
+            this.tbxContactName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // tbxContactEmail
             // 
@@ -650,6 +657,7 @@ namespace B2B_Application_Wizard
             this.tbxContactEmail.Name = "tbxContactEmail";
             this.tbxContactEmail.Size = new System.Drawing.Size(304, 29);
             this.tbxContactEmail.TabIndex = 18;
+            this.tbxContactEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAlphaNum_KeyPress);
             // 
             // lblDGVContacts
             // 
@@ -776,6 +784,13 @@ namespace B2B_Application_Wizard
             this.viewLogToolStripMenuItem.Text = "View Log";
             this.viewLogToolStripMenuItem.Click += new System.EventHandler(this.viewLogToolStripMenuItem_Click);
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(88, 34);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // lnkAccounts
             // 
             this.lnkAccounts.AutoSize = true;
@@ -787,13 +802,6 @@ namespace B2B_Application_Wizard
             this.lnkAccounts.Text = "Accounts (Click on an account to update the Contacts view below. Click this label" +
     " to clear filters.)";
             this.lnkAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAccounts_LinkClicked);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(88, 34);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

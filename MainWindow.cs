@@ -55,7 +55,7 @@ namespace B2B_Application_Wizard
                 return;
             }
             
-            MessageBox.Show("New to version " + VersionLabel + ":" + Environment.NewLine + Environment.NewLine + "* Changed local cache location to ensure data continuity between updates. Log and Password cache may be lost after this update, but will not be impacted going forward." + Environment.NewLine + "* Uploaded to GitHub for future updates and hosting.");
+            MessageBox.Show("New to version " + VersionLabel + ":" + Environment.NewLine + Environment.NewLine + "* Disabled comma usage for all text boxes except Notes to prevent formatting errors.");
         }
 
         private void CheckForPassword()
@@ -524,7 +524,14 @@ namespace B2B_Application_Wizard
                 }
             }
         }
-            
+
+        private void tbxAlphaNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ',' || e.KeyChar == '"')
+            {
+                e.Handled = true;
+            }
+        }
     }
 
     public class Account
